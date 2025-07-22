@@ -3,10 +3,9 @@
 castsapp\models\user::casts"fillable"hidden*
 
 fillable*
-hiddenà
-'app\http\controllers\registercontrollerapp\http\controllers\controller=
-register1app\http\controllers\registercontroller::registerU
-showregistrationform=app\http\controllers\registercontroller::showregistrationform®
+hidden“
+,app\http\controllers\auth\registercontrollerapp\http\controllers\controllerB
+register6app\http\controllers\auth\registercontroller::register®
  app\providers\appserviceprovider"illuminate\support\serviceprovider.
 boot&app\providers\appserviceprovider::boot6
 register*app\providers\appserviceprovider::register!
