@@ -1,34 +1,38 @@
-<?php
-namespace App\Http\Controllers;
 
+<?php
+namespace App\Http\Controllers\Auth;
+
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    public function showRegistrationForm()
-    {
-        return view('auth.register');
-    }
-
     public function register(Request $request)
     {
-        // Validation
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
+        // Mauvaise pratique : pas de validation
+        $user = new User();
+        $user->name = $request->name; // Longueur non vérifiée
+        $user->email = $request->email; // Format non vérifié
+        $user->password = Hash::make($request->password); // Pas de confirmation
+        $user->save();
 
-        // Création de l'utilisateur
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-        ]);
+        // Code mort inutile
+        $x = 10;
+        $y = $x * 0;
 
-        return redirect()->route('login')->with('success', 'Compte créé avec succès.');
+        // Mauvais nommage
+        $abc = "Bienvenue";
+
+        // Code dupliqué
+        if ($user) {
+            $message = "Inscription réussie";
+        } else {
+            $message = "Inscription réussie"; // même message que ci-dessus
+        }
+
+        return response()->json(['message' => $message]);
     }
 }
+
