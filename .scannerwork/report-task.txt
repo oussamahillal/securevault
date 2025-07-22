@@ -3,5 +3,5 @@ projectKey=oussamahillal_securevault
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.65585
 dashboardUrl=https://sonarcloud.io/dashboard?id=oussamahillal_securevault
-ceTaskId=AZgx4MZHMPEzPmfCCYrr
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZgx4MZHMPEzPmfCCYrr
+ceTaskId=AZgyCAKzOwyd3V3uGJtD
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZgyCAKzOwyd3V3uGJtD
